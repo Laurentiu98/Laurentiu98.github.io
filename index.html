@@ -1,0 +1,26 @@
+<frameset rows="35%,*">
+<frame src="top.html" name="f1">
+<frameset cols="30%,*">
+<frame src="left.html" name="f2">
+<frame src="right.html" name="f3">
+</frameset >
+</frameset>
+
+<html>
+<head>
+<script>
+function goBack() {
+    window.history.back()
+}
+</script>
+</head>
+<body>
+
+<button onclick="goBack()">Go Back</button>
+
+<p>Clicking on the Back button here will not result in any action, because there is no previous URL in the history list.</p>
+
+</body>
+</html>
+
+

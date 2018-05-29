@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>p1</title>
+      
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+</head>
+  <body text="#000000" bgcolor="#ffffff" link="#ffcc00" alink="#000088"
+ vlink="#ff0000" style="background-color: rgb(51,255,51);">
+ 
+<div style="text-align: center; font-weight: bold;"> 
+<div style="text-align: center;"> 
+<h5><big><big><big><big>Programarea orientata pe obiecte in C++</big></big></big></big></h5>
+ 
+<div style="margin-left: 80px; text-align: left;"><br>
+ <br>
+ <br>
+ 1. Notiuni introductive<br>
+ Programarea orientat&#259; pe obiecte este o tehnologie modern&#259; in domeniul program&#259;rii 
+calculatoarelor, care a rezultat din necesitatea realiz&#259;rii de aplica&#355;ii&nbsp;&nbsp; 
+din ce &icirc;n ce mai complexe. Programarea clasica si structurata avea urmatoarele
+dezavantaje: control greoi al programelor de dimensiuni mari, dificultati
+cu privire la reutilizarea codurilor de programe si inflexibiliatea adaptarii
+si extinderii unor module de program deja realizate. Programarea clasica
+structurata are la baza celebra ecuatie a lui Nikolaus Wirth:<br>
+ <br>
+ Program = Structuri de date + Algoritmi<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Programarea 
+Orientata pe Obiecte, POO, se fundamenteaza pe conceptul de obiect, care este
+definit printr-o multime de date, numite proprietati, si o multime de proceduri
+sau functii de prelucrare ale acestor date, numite metode. In consecinta, 
+ecuatia POO este:<br>
+ <br>
+ Obiect = Date + Functii&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+ sau<br>
+ <br>
+ Obiect = Date + Functii&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+ Obiect = Proprietati + Metode&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+ Diferenta dintre cele doua cai de abordare ale programarii calculatoarelor 
+consta in maniera de abordare a programarii. In timp ce programarea clasica 
+structurata se concentreaza pe prelucrarea datelor, adica pe programe, proceduri 
+si functii, POO se bazeaza pe definirea obiectelor, adica, pe proprietatile 
+acestora, numite date, si pe functiile acestor obiecte, numite metode.<br>
+ <br>
+ 2. Clase si&nbsp; obiecte<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; La baza 
+POO stau conceptele de clasa si de obiect.<br>
+ <br>
+ Definitia 1<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Clasa, 
+intr-un anumit limbaj de programare, reprezinta definirea unui tip de obiecte 
+abstracte sau concrete, adica descrierea proprietatilor, a datelor si a metodelor, 
+a prelucrarilor, posibile asupra datelor. Clasa este, de fapt, o notiune abstracta,
+care defineste un anumit tip de obiecte, sau, altfel spus, o clasa reprezinta
+multimea posibila a mai multor obiecte de acelasi tip.<br>
+ <br>
+ Definitia 2<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Obiect, 
+reprezinta o multime de date care descrie un anumit obiect concret sau abstract, 
+numite si proprietati,&nbsp; impreuna cu procedurile, functiile, de prelucrare 
+a cestora, numite metode.<br>
+ <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Crearea 
+unui obiect presupune specificarea clasei din care face parte, astfel identificandu-se 
+proprietatile obiectului si modul in care acestea pot fi folosite si prelucrate<br>
+ <br>
+ Observatie:<br>
+ <br>
+ Crearea sau declararea unui obiect este similara cu crearea sau declararea 
+unor variabile. Declararea unei variabile se face, dupa cum se stie, prin 
+specificarea identificatorului acesteia, precedat de tipul variabilei iar 
+declararea unui obiect presupune precizarea identificatorului acestuia, precedat 
+de clasa din care face parte, clasa care in mod implicit determina proprietatile 
+si metodele&nbsp; obiectului definit.<br>
+ <br>
+ O clasa in limbajul C++ poate fi reprezentata ca o extindere a conceptului 
+de structura, care, ca si o structura, descrie un sablon pentru viitoarele 
+declarari de variabile obiect.<br>
+ <br>
+ Definirea generala unei clase in C++<br>
+ class [nume_clasa]<br>
+ <br>
+ &nbsp; {<br>
+ <br>
+ &nbsp;&nbsp;&nbsp; specificator_acces1;<br>
+ <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; date_si_functii1;<br>
+ <br>
+ &nbsp;&nbsp;&nbsp; specificator_acces2;<br>
+ <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; date_si_functii2;<br>
+ <br>
+ &#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;..<br>
+ &nbsp;&nbsp;&nbsp; specificator_accesn;<br>
+ <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; date_si_functiin;<br>
+ <br>
+ }[obiect1] [,obiect2] &#8230; [,obiectm];<br>
+ <br>
+ unde:<br>
+ <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - nume_clasa 
+&#8211; optional, este un identificator ales de programator care denumeste clasa 
+definita si prin intermediul caruia se apeleaza aceasta;<br>
+ <br>
+ - specificator_accesi (i=1,n) &#8211; este o eticheta care poate fi unul dintre 
+cuvinele cheie: public, private sau protected.<br>
+ <br>
+ Spre deosebire de o structura, ai carei membri sunt toti accesibili programului, 
+o clasa poate avea membri pe care programul ii poate accesa&nbsp; direct (public),
+utilizand operatorul punct (.) si alti membri, denumiti privati (private),
+pe care programul nu-i poate accesa direct. Unica accesare a datelor si metodelor
+private (private) se face numai prin intermediul metodelor publice. Dupa
+cum se va vedea, o clasa poate deriva dintr-o clasa de baza, anterior definita,
+concept cunoscut sub numele de mostenire. Un membru protejat (protected) are
+un statut intermediar intre membri publici si privati. Pentru clasa de baza,
+obiectele acesteia pot accesa membri protejati, ca si cum ar fi publici, iar
+obiectele claselor derivate nu pot accesa un membru declarat protected in
+clasa de baza, decat prin intermediul unor functii de interfata declarate 
+publice.<br>
+ <br>
+ - date_si_functiii; (i=1,n) &#8211; descrie datele, adica proprietatile, si functiile, 
+adica metodele specifice clasei definite care, in functie de specificator_accesi 
+(i=1,n), pot fi public, private sau protected.<br>
+ <br>
+ - [obiect1] [,obiect2] &#8230; [,obiectm] &#8211; reprezinta identificatorii obiectelor 
+de tipul clasei la care sunt atasati, adica numele variabilelor obiect respective 
+care vor fi utilizate in programul in care apar.<br>
+ <br>
+ Observatii:<br>
+ <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - la
+declararea obiectelor, o data cu definirea clasei asociate,&nbsp; se poate
+omite identificatorul de clasa, nume_clasa.<br>
+ <br>
+ - declararea obiectelor, ulterior definirii clasei asociate, impune obligativitatea 
+identificatorului de clasa, nume_clasa.<br>
+ <br>
+ Declararea obiectelor, ulterior definirii clase se face astfel:<br>
+ class nume_clasa [obiect1] [,obiect2] &#8230; [,obiectm];<br>
+ <br>
+ unde, nume_clasa,obiect1,obiect2, &#8230; ,obiectm au semnificatiilie mai sus
+prezentate.<br>
+ </div>
+ <br>
+ <br>
+ </div>
+ 
+<div style="text-align: left;"> 
+<div style="text-align: left;"><big><big><big><big><big><big><big><big><big><big><big><br>
+ <br>
+ <br>
+ </big></big></big></big></big></big></big></big></big></big></big><br>
+ </div>
+ <br>
+ 
+<div style="text-align: center;"><br>
+ </div>
+ </div>
+ </div>
+ <br>
+</body>
+</html>
+
+<html>
+<head>
+<script>
+function goBack() {
+    window.history.back()
+}
+</script>
+</head>
+<body>
+
+<button onclick="goBack()">Go Back</button>
+
+
+</body>
+</html>
